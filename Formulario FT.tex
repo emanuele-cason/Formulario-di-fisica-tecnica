@@ -1,0 +1,91 @@
+\documentclass[9pt]{article}
+\usepackage[a4paper, lmargin=0cm,rmargin=0cm,tmargin=0cm,bmargin=0cm, landscape]{geometry}
+
+\usepackage{multicol}
+\usepackage[fleqn]{amsmath}
+\usepackage{xcolor}
+\definecolor{gray1}{rgb}{0.43, 0.5, 0.5}
+
+\begin{document}
+
+\begin{gather*}
+	\Sigma dQ = \Sigma m_s \cdot (gdz+\frac{1}{2}dw^2+du_i+du_c+...) + \Sigma C_s dV + \Sigma dm_u \cdot (gz+\frac{1}{2}w^2+h+u_c+...)_u - \Sigma dm_e \cdot (gz+\frac{1}{2}w^2+h+u_c+...)_e + \Sigma dC_u V_u - \Sigma dC_e V_e +\Sigma dL' \qquad (\text{con }h=u_i + pv)\\
+	\Sigma Q_{12} = \Sigma m_s \cdot (g(z_2-z_1)+\frac{1}{2}(w_2^2-w_1^2)+(u_{i2}-u_{i1})+...) + \Sigma C_s (V_2 - V_1)_s + \Sigma \int_{1}^{2} |\dot{m}| \left[g(z_u - z_e) +\frac{1}{2}(w_u^2-w_e^2)+(h_u-h_e)+...\right] \,d\tau + \Sigma \int_{1}^{2} |I|\cdot (V_u - V_e) \, d\tau\ +\Sigma L'_{12}\\
+	\Sigma q = \Sigma m_s \cdot \left(g \frac{dz}{d\tau} + \frac{1}{2} \frac{dw^2}{d\tau} + \frac{du_i}{d\tau} + ...\right) + \Sigma C_s \frac{dV_s}{d\tau} + \Sigma \, |\dot{m}| \left[g(z_u - z_e) +\frac{1}{2}(w_u^2-w_e^2)+(h_u-h_e)+...\right] + |I|\cdot (V_u - V_e) +\Sigma P
+\end{gather*}
+\vspace{-12mm}
+\begin{multicols}{2}
+	
+	\begin{gather*}
+		\dot{m}=\rho \cdot A \cdot w \qquad dL = p \cdot v \cdot dm \qquad u_{g2}-u_{g1} = (-k_g \frac{1}{r_2^2})-(-k_g \frac{1}{r_1^2})\\
+		0 = \dot{m} \int_{1}^{2} v \, dp\ + \dot{m}g(z_2-z_1)+\frac{1}{2} \dot{m} (w_2^2-w_1^2) + \dot{m} R_{12} + P \\
+		R_{12} = -v \cdot (p_2 - p_1) = f_a \frac{L}{D} \frac{w^2}{2} \\
+		\text{Trasformazione ciclica sist. chiuso o success. chiusa di sist. aperti}\\
+		\frac{Q}{m} = \frac{L}{m} = \Sigma_{rev} \int p \,dv\ \qquad \frac{q}{\dot{m}} = \frac{P}{\dot{m}} = \Sigma_{rev} \left( - \int v \,dp\ \right)\\
+		\text{Indicatori di efficienza mot. termici/macc. frigorifere/p. di calore}\\
+		\eta = \frac{|L|}{|Q_1|}=1-\frac{|Q_2|}{|Q_1|} \qquad \varepsilon = \frac{|Q_2|}{|L|} \qquad \varepsilon ' = \frac{|Q_1|}{|L|} = \frac{|Q_2|}{|L|} +1 = \varepsilon +1\\
+		\text{Rendimento massimo per cicli bi-termici e tri-termici}\\
+		\eta_{max} = 1-\frac{\mathbf{T_2}}{\mathbf{T_1}} \qquad \varepsilon_{max(2)} = \frac{\mathbf{T_2}}{\mathbf{T_1}-\mathbf{T_2}} \qquad \varepsilon_{max(3)} = \frac{\mathbf{T_2}}{\mathbf{T_1} - \mathbf{T_2}}\left(1-\frac{\mathbf{T_1}}{\mathbf{T_3}}\right)\\ \varepsilon'_{max} = \varepsilon_{max} + 1 \\
+		\text{Bilancio entropico sist. chiuso/sist. con deflusso}\\
+		m_s(s_2-s_1) = \frac{Q_{12}}{\mathbf{T_b}} + \Pi_{12} \qquad \Sigma \, |\dot{m}| (s_u - s_e) = \frac{q}{\mathbf{T_b}} + \dot{\Pi}\\
+		\text{Titolo di vapore}\\
+		x_{_V} = \frac{m_{_V}}{m} = \frac{\overline{v} - v_{_L}}{v_{_V} - v_{_L}} \qquad \overline{v}  = (1-x_{_V})v_{_L}+ x_{_V} v_{_V}\\
+		\text{Sostanze incomprimibili } (v=cost)\\[-5pt]
+		\vspace{-5mm}
+		u_{i2}-u_{i1} = \overline{c}\,(t_2-t_1)
+		\qquad h_2-h_1= \overline{c}\,(t_2-t_1) + v\,(p_2-p_1) 
+		\qquad s_2 - s_1 = \overline{c}\cdot \ln\left(\frac{\mathbf{T_2}}{\mathbf{T_1}}\right)
+		\\
+		\text{Gas ideali}\\
+		p\,v=R\, \mathbf{T}\qquad
+		u_{i2}-u_{i1} = c_v \, (T_2 - T_1)\qquad
+		h_2-h_1=c_p \, (T_2 - T_1) \\
+		s_2 - s_1 = c_v \cdot \ln \left[ \frac{\mathbf{T_2}}{\mathbf{T_1}} \left( \frac{v_2}{v_1} \right)^{k-1} \right] = c_p \cdot \ln \left[ \frac{\mathbf{T_2}}{\mathbf{T_1}} \left( \frac{p_2}{p_1} \right)^{\frac{1-k}{k}} \right] = c_v \cdot \ln \left[ \frac{p_2}{p_1} \left( \frac{v_2}{v_1} \right)^k \right]
+		\\
+		\begin{split}
+			& \overline{R} = 8314.2 \,\,\, \text{J/(kmol K)}\\
+			& k = \frac{c_p}{c_v} \qquad c_v = \frac{1}{k-1} \, R \qquad c_p = \frac{k}{k-1} \, R \qquad R = \frac{\overline{R}}{M_m} \qquad k = \frac{\psi +2}{\psi}\\
+			&x_j = m_j/m \qquad X_j = V_j/V \qquad M=\Sigma X_j \, M_j \qquad c_v = \Sigma x_j c_{v_j} \qquad c_p = \Sigma x_j c_{p _j}\\\\
+		\end{split}
+	\end{gather*}
+	
+	\begin{gather*}
+		Q_{12} = \color{gray1} \Sigma m_{\text{inerti}} \, (u_{i2} - u_{i1}) + ...  \,  + \color{black} \Sigma m_r \, (u_{i0} - u_{i1}) - m_c \cdot U_0 + \Sigma m_p \, (u_{i2} - u_{i0}) \color{gray1} + L_{12}\\
+		q = \color{gray1} \Sigma \dot{m}_{\text{inerti}} \, (h_2-h_1) + ...  \,  + \color{black} \Sigma \dot{m}_r \, (h_0 - h_1) - \dot{m}_c \cdot H_0 + \Sigma \dot{m}_p \, (h_2 - h_0) \color{gray1} + P
+		\\\\
+		\text{Conduzione e distr. temperatura cilindro combustibile pieno } t_c(r)\\
+		|q| = \frac{|T_2 - T_1|}{R_t} \qquad R_p = \frac{s}{\lambda A} \qquad R_c = \frac{1}{2 \pi L \lambda} \ln \frac{r_e}{r_i} \qquad
+		t_c(r) = t_0 + \frac{H}{4\, \lambda_b}(r_0^2-r^2)\\
+		\text{Convezione}\\
+		\textit{Nu} = \frac{\alpha_c \cdot L^*}{\lambda^*} \qquad \textit{Re}_{_{(F)}} = \frac{\rho^* w^* L^*}{\mu^*} \qquad \textit{Gr}_{_{(N)}} = \frac{L^{*3} \rho^{*2}\,g\,\beta^* \Delta T^*}{\mu^{*2}} \qquad \textit{Pr} = \frac{c_p^* \cdot\mu^*}{\lambda^*} \\ R_{\textit{conv}} = \frac{1}{\alpha_c A}
+		\\
+		\text{Irraggiamento (attenzione alle } \textbf{Temperature assolute} \text{)}\\
+		c=\lambda \cdot \nu \qquad \rho = q_r/q \qquad \tau = q_t/q \qquad \alpha = q_a/q=1- \rho - \tau \qquad A_1 \, F_{12} = A_2 \, F_{21}\\
+		\text{Corpi neri}\\
+		q_{12} = \sigma \, A_1 \, F_{12}\, (\mathbf{T_1}^{4} - \mathbf{T_2}^{4}) \qquad R_r = \frac{1}{\sigma \, A_1 \, F_{12}\, 4\,\mathbf{T_m}^{\,3}}=\frac{1}{\alpha_r \cdot A_1}\qquad\text{(se } \Delta T < 100 \text{ K)}
+		\\R_{S1} = \frac{1}{(\alpha_c + \alpha_r) \, A_1} = \left(\frac{1}{R_c}+\frac{1}{R_r}\right)^{-1}\qquad K = \frac{1}{R_{TOT} \cdot A} \qquad q = KA\,(T_1 - T_2)
+		\\
+		\text{Corpi grigi (le R non sono resistenze termiche!)}\\
+		E = \varepsilon \cdot E_n \qquad R_j = \frac{1-\varepsilon_j}{\varepsilon_j \cdot A_j} \qquad R_{jk} = \frac{1}{A_j \cdot F_{jk}} \qquad \color{gray1} q_{jk} = \frac{\sigma \, (\mathbf{T_j}^4 - \mathbf{T_k}^4)}{R_j + R_{jk} + R_k} \color{black}
+		\\
+		\text{Scambiatori di calore}\\
+		|q|=KA \cdot\frac{\Delta'-\Delta''}{\ln \left(\frac{\Delta'}{\Delta''}\right)} \, F_t \qquad q_{max} = (\dot{m}c)_{min}(t_{1,in} - t_{2,in}) \qquad \varepsilon = \frac{q}{q_{max}}  \\ r=\frac{(\dot{m}c)_{min}}{(\dot{m}c)_{max}}
+		\qquad \textit{NTU} = \frac{KA}{(\dot{m}c)_{min}}\qquad
+		\varepsilon_{(r=1)} = \frac{\textit{NTU}}{\textit{NTU} +1}\qquad \varepsilon_{(r=0)} = 1-e^{-\textit{NTU}}
+		\\
+		\begin{split}
+			&\text{Compressione ed espansione}\\
+			&\eta_{_C,is} = \frac{L_{is}}{L} = \frac{m \, (u_{i1} - u_{i2,is})}{m \, (u_{i1} - u_{i2})} = \frac{\dot{m} \, (h_{1} - h_{2,is})}{\dot{m} \, (h_{1} - h_{2})} = \frac{P_{is}}{P}\\ 
+			&\eta_{_E,is} =\frac{L}{L_{is}} =  \frac{m \, (u_{i1} - u_{i2})}{m \, (u_{i1} - u_{i2,is})} = \frac{\dot{m} \, (h_{1} - h_{2})}{\dot{m} \, (h_{1} - h_{2,is})} =  \frac{P}{P_{is}}\\
+		\end{split} \qquad
+		\begin{split}
+			\\
+			& \eta_I = \frac{|P_{_E}|-|P_{_P}|}{\dot{m}_c \cdot H_0}\\
+			& \text{Isoterme} \rightarrow p_2 = p_1 \, (v_1/v_2)\\
+			& \text{Isobare} \rightarrow v_2 = v_1 \, (\mathbf{T_2}/\mathbf{T_1})\\
+			& \text{Isocore} \rightarrow p_2 = p_1 \, (\mathbf{T_2}/\mathbf{T_1})
+		\end{split}
+	\end{gather*}
+	
+\end{multicols}
+\end{document} 
